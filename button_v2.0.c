@@ -11,10 +11,10 @@ typedef struct {
     uint8_t mode;             // 状态机状态
     uint16_t Interval_time;   // 双击间隔判定时间,ms
     uint16_t Longpress_time;  // 长摁判定时间,ms
+    uint8_t (*readPin)(void); // 按键读取函数
     void (*singlePress)(void);// 单击响应函数
     void (*doublePress)(void);// 双击响应函数
     void (*longPress)(void);  // 长摁响应函数
-    uint8_t (*readPin)(void); // 函数指针
 } Button;
 
 // 重写按键检测和相应事件处理函数
